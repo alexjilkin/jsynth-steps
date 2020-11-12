@@ -1,0 +1,1 @@
+export const sampleRate = 22050
