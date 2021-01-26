@@ -1,4 +1,6 @@
 import {sampleRate} from '../consts'
+import {increament} from '../synth'
+
 const bufferSize = 512;
 
 export const play = (waveGenerator) => {
@@ -11,7 +13,7 @@ export const play = (waveGenerator) => {
   const createBuffer = (output) => {
     for (let i = 0; i < buffer.length; i++) {
       const {value} = waveGenerator.next()
-  
+
       output[i] = value
     }
   }

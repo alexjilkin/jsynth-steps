@@ -2,10 +2,12 @@ import * as browserPlayer from '../output/browserPlayer'
 import {waveGenerator, getMasterClock} from '../synth'
 
 const triggers = {}
+
 let isPlayingByIndex = {}
 let isFirstTime = true;
 let numOfGeneratingInstances = 0;
 
+export const getTriggers = () => triggers
 export const press = (frequencyModulation, id) => {
     triggers[id] = {
         shouldGenerate: true,
@@ -27,6 +29,8 @@ export const release = (id) => {
     triggers[id].xAtStop = getMasterClock()
     numOfGeneratingInstances--;
 }
+
+
 
 const keyIndexToFrequencyModulation = (index) => {
     return Math.pow(2, -1 + index/12);
