@@ -1,5 +1,4 @@
 import {sampleRate} from '../consts'
-import {increament} from '../synth'
 
 const bufferSize = 512;
 
